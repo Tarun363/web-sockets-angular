@@ -1,0 +1,78 @@
+.chatSection {
+  width: 600px;
+  position: fixed;
+  height: 100vh;
+  left: 50%;
+  transform: translate(-50%);
+  border: 1px solid #ccc;
+}
+
+.header {
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.messagesSection {
+  position: fixed;
+  height: calc(100vh - 60px - 10vh);
+  top: 60px;
+  padding: 10px;
+  overflow: hidden auto;
+  border: 1px solid #ccc;
+}
+
+.textBoxSection {
+  position: fixed;
+  bottom: 0;
+  height: 10vh;
+  padding: 10px;
+  width: 100%;
+}
+
+@mixin profileLogoSize($size) {
+  width: $size;
+  height: $size;
+  min-width: $size;
+  min-height: $size;
+  max-width: $size;
+  max-height: $size;
+}
+
+
+.profileLogo {
+  @include profileLogoSize(45px);
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 16px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-weight: 500;
+  //   box-shadow: 0px 4px 16px #000;
+}
+
+.messageDiv {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.preview {
+  aspect-ratio: 16 / 9;
+  max-width: 300px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+}
+

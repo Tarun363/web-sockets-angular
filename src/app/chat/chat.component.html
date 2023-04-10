@@ -1,0 +1,23 @@
+<div class="chatSection">
+    <div class="header">
+        <h4>Chat header</h4>
+    </div>
+    <div class="messagesSection">
+        <div class="messageDiv" [id]="'message_' + m.id" *ngFor="let m of messages; let i=index">
+            <div class="logoDiv">
+                <div class="profileLogo" *ngIf="m.thumbnail"
+                    [ngStyle]="{'background-image':'url(' + m.thumbnail + ')'}">
+                </div>
+                <h6 class="profileLogo" *ngIf="!m.thumbnail">{{m.title.substring(0,2)}}</h6>
+            </div>
+            <div>
+                <h6 class="mb-0">{{m.title}}</h6>
+                <p class="mb-0">{{m.description}}</p>
+                <img *ngIf="i%2==0" class="preview" [src]="m.images[0]" [alt]="m.title">
+            </div>
+        </div>
+    </div>
+    <div class="textBoxSection">
+        <input class="form-control" placeholder="Type message here...">
+    </div>
+</div>
